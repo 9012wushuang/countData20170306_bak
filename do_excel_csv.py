@@ -30,7 +30,7 @@ class Excel_csv():
         self.attr = ['', '', ''] + self.modules + self.modules + self.assets + self.company_info
 
     def write_csv(self, show_list):
-        outputFile = open(self.name, 'w', encoding='utf-8', newline='')
+        outputFile = open(self.name, 'w', encoding='GB18030', newline='')
         outputWriter = csv.writer(outputFile)
         outputWriter.writerow(self.header)
         outputWriter.writerow(self.attr)
