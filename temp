@@ -1,0 +1,21 @@
+
+CREATE TABLE `asset_basic_data` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `asset_status` varchar(500) DEFAULT NULL COMMENT '资产状态(使用、空闲、领用、借用、退库1):存数量和金额（注释:退库1:小于date）',
+  `asset_source` varchar(500) DEFAULT NULL COMMENT '资产来源(购买和租赁:存数量和金额)',
+  `asset_other` varchar(500) DEFAULT NULL COMMENT '存资产 全部、新增、退库2 :存数量和金额（注释:退库2 :date当日区间内）',
+  `company_id` bigint(20) DEFAULT NULL COMMENT '公司id',
+  `root_company_id` bigint(20) DEFAULT NULL COMMENT 'root公司id',
+  `month_begin_hand_end` int(11) DEFAULT NULL COMMENT '月初or月中or月末(0 月初 1月过程中 2月末)',
+  `cdate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `mdate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `asset_vv` varchar(500) DEFAULT NULL,
+  `company_overview` varchar(500) DEFAULT NULL,
+  `asset_change` varchar(500) DEFAULT NULL,
+  `company_change` varchar(500) DEFAULT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `companyId_index` (`company_id`),
+  KEY `rootCompanyId_index` (`root_company_id`),
+  KEY `companyId_rootCompanyId_index` (`company_id`,`root_company_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
