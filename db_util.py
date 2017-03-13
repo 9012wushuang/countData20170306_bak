@@ -9,6 +9,7 @@ import logging
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s-%(levelname)s-%(message)s')
 
+# todo 添加mysql数数据库信息，后续可优化到mongo查询
 host = '127.0.0.1'
 user = 'root'
 password = ''

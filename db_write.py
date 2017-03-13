@@ -13,6 +13,7 @@ import db_util as db
 
 
 def write_log_into_db():
+    # todo 添加web、app日志文件路径
     log_web = rw.Read_write_log('/data/bifenghui/countData20170306/countIpUvPvVv_new.log', 'r').read_web()
     log_app = rw.Read_write_log('/data/bifenghui/countData20170306/countIpUvPvVv_new.log', 'r').read_web()
 
