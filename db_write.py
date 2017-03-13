@@ -141,5 +141,7 @@ def write_log_into_db():
 
         dbClient.commit()
 
+    # 关闭数据库连接
+    db.closeConnectDb(dbClient)
 
 print(write_log_into_db())

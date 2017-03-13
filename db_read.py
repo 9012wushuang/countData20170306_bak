@@ -151,6 +151,8 @@ def query_asset_basic_data():
 
     csv = decsv.Excel_csv()
     csv.write_csv(csv_list)
+    # 关闭数据库连接
+    db.closeConnectDb(dbClient)
 
 
 def getCompanyName(companyId):
@@ -165,6 +167,7 @@ def getCompanyName(companyId):
             return 'no get companyId by company_id'
         else:
             return data[0]
+        db.closeConnectDb(dbClient)
     except:
         print('MySql connect fail...')
 
